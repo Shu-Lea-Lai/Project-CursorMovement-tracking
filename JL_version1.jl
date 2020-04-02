@@ -1,4 +1,4 @@
-ddd# # Basic Usage
+# # Basic Usage
 
 using Distributions
 using HMMBase
