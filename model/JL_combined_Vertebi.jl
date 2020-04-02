@@ -45,7 +45,7 @@ cs_Nms = Nm.(cuts_μ,cuts_σ)
 
 
 
-ss
+dd
 
 plot_dist(curs_sdNm,rg=0:0.01:40)
 plot_dist(cs_Nms,cs_Nm)
