@@ -1,0 +1,39 @@
+---
+title: "R Notebook"
+output: html_notebook
+---
+
+```{r}
+dt = read.table("data/simple1_jacob.txt")
+colnames(dt) = c("Date","Time","Block","Trial","a","b","c","Xpos_cursor","Ypos_cursor","Xpos_dot","Ypos_dot")
+dim(dt)
+
+
+library(ggplot2)
+library(dplyr)
+library(tidyr)
+dt = dt %>% group_by(Trial) %>%
+  mutate(time = 1:n()) %>%
+  ungroup()
+write.csv(dt,"data/simple1_jacob.csv")
+
+dt = dt %>% gather(condition, measurement, c(Xpos_cursor,Xpos_dot), factor_key=TRUE) 
+dt
+ggplot(data = dt,aes(x=time,y=measurement) )+
+  geom_point(size = 0.5,aes(color=condition))+
+  facet_grid(Trial~Block)
+ 
+```
+
+```{r}
+iris
+newdata = iris %>% mutate(new_col = case_when(Sepal.Length>5.5 ~ ">5.5",
+                                    Sepal.Length<5 ~ "<5",
+                                    TRUE ~ "else"))
+newdata
+```
+
+```{r}
+dt %>% mutate()
+```
+
