@@ -2,7 +2,7 @@ all:
 	@echo "Doing all"
 deploy:
 	@echo "Pushing to production"
-@git push https://github/Shu-Lea-Lai/project-visualmemory-sideexp.git
+@git push Project-CursorMovement-tracking
 
 update:
 	@echo "Makefile: Doing UPDATE stuff like gurnt, gulp, rake,..."
