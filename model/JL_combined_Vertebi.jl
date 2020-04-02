@@ -43,7 +43,7 @@ cuts_μ = quantile.(cs_Nm,cuts_quant)
 cuts_σ = quantile.(cs_sdNm,cuts_quant)
 cs_Nms = Nm.(cuts_μ,cuts_σ)
 
-dd
+
 plot_dist(curs_sdNm,rg=0:0.01:40)
 plot_dist(cs_Nms,cs_Nm)
 myplot(zv.stateT)
